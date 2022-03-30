@@ -1,0 +1,706 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+procedure main(args:String[]) begin
+
+Q:=(1‥124) ∪ {"Error"}
+Σ:= {'A','B','C','D','E'} ∪ ('a'‥'e') ∪ {'*','/','#','%'}
+q₀:=1
+F:=(46‥124)
+M:=GDeterministicAutomaton(Q,Σ,q₀,F,d)
+GAutomataFrame.show(M)
+end
+
+function d(q,s) begin
+
+if (q=1) and s in {'A','B','C','D','E'} then
+return 2
+elseif (q=1) and s in {'a','b','c','d','e'} then
+return 3
+elseif (q=1) and s in {'*','/','#','%'} then
+return 4
+
+elseif (q=2) and s in {'A','B','C','D','E'} then
+return 5
+elseif (q=2) and s in {'a','b','c','d','e'} then
+return 6
+elseif (q=2) and s in {'*','/','#','%'} then
+return 7
+
+elseif (q=3) and s in {'A','B','C','D','E'} then
+return 8
+elseif (q=3) and s in {'a','b','c','d','e'} then
+return "Error"
+elseif(q=3) and s in {'*','/','#','%'} then
+return 9
+
+elseif (q=4) and s in {'A','B','C','D','E'} then
+return 10
+elseif (q=4) and s in {'a','b','c','d','e'} then
+return 11
+elseif (q=4) and s in {'*','/','#','%'} then
+return "Error"
+
+ elseif (q=5) and s in {'A','B','C','D','E'} then
+  return 12
+ 
+ elseif (q=5) and s in {'a','b','c','d','e'} then
+  return 13
+ 
+ elseif (q=5) and s in {'*','/','#','%'} then
+  return 14
+ 
+ elseif (q=6) and s in {'A','B','C','D','E'} then
+  return 15
+ 
+ elseif (q=6) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=6) and s in {'*','/','#','%'} then
+  return 16
+ 
+ elseif (q=7) and s in {'A','B','C','D','E'}  then
+  return 17
+ 
+ elseif (q=7) and s in {'a','b','c','d','e'} then
+  return 18
+ 
+ elseif (q=7) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=8) and s in {'A','B','C','D','E'} then
+  return 19
+ 
+ elseif (q=8) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=8) and s in {'*','/','#','%'} then
+  return 20
+ 
+ elseif (q=9) and s in {'A','B','C','D','E'} then
+  return 21
+ 
+ elseif (q=9) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=9) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=10) and s in {'A','B','C','D','E'} then
+  return 22
+ 
+ elseif (q=10) and s in {'a','b','c','d','e'} then
+  return 23
+ 
+ elseif (q=10) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=11) and s in {'A','B','C','D','E'} then
+  return 24
+ 
+ elseif (q=11) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=11) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=12) and s in {'A','B','C','D','E'} then
+  return 25
+ 
+ elseif (q=12) and s in {'a','b','c','d','e'} then
+  return 26
+ 
+ elseif (q=12) and s in {'*','/','#','%'} then
+  return 27
+ 
+ elseif (q=13) and s in {'A','B','C','D','E'} then
+  return 28
+ 
+ elseif (q=13) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=13) and s in {'*','/','#','%'} then
+  return 29
+ 
+ elseif (q=14) and s in {'A','B','C','D','E'} then
+  return 30
+ 
+ elseif (q=14) and s in {'a','b','c','d','e'} then
+  return 31
+ 
+ elseif (q=14) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=15) and s in {'A','B','C','D','E'} then
+  return 32
+ 
+ elseif (q=15) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=15) and s in {'*','/','#','%'} then
+  return 33
+ 
+ elseif (q=16) and s in {'A','B','C','D','E'} then
+  return 34
+ 
+ elseif (q=16) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=16) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=17) and s in {'A','B','C','D','E'} then
+  return 35
+ 
+ elseif (q=17) and s in {'a','b','c','d','e'} then
+  return 36
+ 
+ elseif (q=17) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=18) and s in {'A','B','C','D','E'} then
+  return 37
+ 
+ elseif (q=18) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=18) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=19) and s in {'A','B','C','D','E'} then
+  return 38
+ 
+ elseif (q=19) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=19) and s in {'*','/','#','%'} then
+  return 39
+ 
+ elseif (q=20) and s in {'A','B','C','D','E'} then
+  return 40
+ 
+ elseif (q=20) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=20) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=21) and s in {'A','B','C','D','E'} then
+  return 41
+ 
+ elseif (q=21) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=21) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=22) and s in {'A','B','C','D','E'} then
+  return 42
+ 
+ elseif (q=22) and s in {'a','b','c','d','e'} then
+  return 43
+ 
+ elseif (q=22) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=23) and s in {'A','B','C','D','E'} then
+  return 44
+ 
+ elseif (q=23) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=23) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=24) and s in {'A','B','C','D','E'} then
+  return 45
+ 
+ elseif (q=24) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=24) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=25) and s in {'A','B','C','D','E'} then
+  return 46
+ 
+ elseif (q=25) and s in {'a','b','c','d','e'} then
+  return 47
+ 
+ elseif (q=25) and s in {'*','/','#','%'} then
+  return 48
+ 
+ elseif (q=26) and s in {'A','B','C','D','E'} then
+  return 49
+ 
+ elseif (q=26) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=26) and s in {'*','/','#','%'} then
+  return 50
+ 
+ elseif (q=27) and s in {'A','B','C','D','E'} then
+  return 51
+ 
+ elseif (q=27) and s in {'a','b','c','d','e'} then
+  return 52
+ 
+ elseif (q=27) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=28) and s in {'A','B','C','D','E'} then
+  return 53
+ 
+ elseif (q=28) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=28) and s in {'*','/','#','%'} then
+  return 54
+ 
+ elseif (q=29) and s in {'A','B','C','D','E'} then
+  return 55
+ 
+ elseif (q=29) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=29) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=30) and s in {'A','B','C','D','E'} then
+  return 56
+ 
+ elseif (q=30) and s in {'a','b','c','d','e'} then
+  return 57
+ 
+ elseif (q=30) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=31) and s in {'A','B','C','D','E'} then
+  return 58
+ 
+ elseif (q=31) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=31) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=32) and s in {'A','B','C','D','E'} then
+  return 59
+ 
+ elseif (q=32) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=32) and s in {'*','/','#','%'} then
+  return 60
+ 
+ elseif (q=33) and s in {'A','B','C','D','E'} then
+  return 61
+ 
+ elseif (q=33) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=33) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=34) and s in {'A','B','C','D','E'} then
+  return 62
+ 
+ elseif (q=34) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=34) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=35) and s in {'A','B','C','D','E'} then
+  return 63
+ 
+ elseif (q=35) and s in {'a','b','c','d','e'} then
+  return 64
+ 
+ elseif (q=35) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=36) and s in {'A','B','C','D','E'} then
+  return 65
+ 
+ elseif (q=36) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=36) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=37) and s in {'A','B','C','D','E'} then
+  return 66
+ 
+ elseif (q=37) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=37) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=38) and s in {'A','B','C','D','E'} then
+  return 67
+ 
+ elseif (q=38) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=38) and s in {'*','/','#','%'} then
+  return 68
+ 
+ elseif (q=39) and s in {'A','B','C','D','E'} then
+  return 69
+ 
+ elseif (q=39) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=39) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=40) and s in {'A','B','C','D','E'} then
+  return 70
+ 
+ elseif (q=40) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=40) and s in {'*','/','#','%'} then
+  return 71
+ 
+ elseif (q=41) and s in {'A','B','C','D','E'} then
+  return 72
+ 
+ elseif (q=41) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=41) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=42) and s in {'A','B','C','D','E'} then
+  return 73
+ 
+ elseif (q=42) and s in {'a','b','c','d','e'} then
+  return 74
+ 
+ elseif (q=42) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=43) and s in {'A','B','C','D','E'} then
+  return 75
+ 
+ elseif (q=43) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=43) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=44) and s in {'A','B','C','D','E'} then
+  return 76
+ 
+ elseif (q=44) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=44) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=45) and s in {'A','B','C','D','E'} then
+  return 77
+ 
+ elseif (q=45) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=45) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=46) and s in {'A','B','C','D','E'} then
+  return 78
+ 
+ elseif (q=46) and s in {'a','b','c','d','e'} then
+  return 79
+ 
+ elseif (q=46) and s in {'*','/','#','%'} then
+  return 80
+  
+ elseif (q=47) and s in {'A','B','C','D','E'} then
+  return 81
+ 
+ elseif (q=47) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=47) and s in {'*','/','#','%'} then
+  return 82
+  
+ elseif (q=48) and s in {'A','B','C','D','E'} then
+  return 83
+ 
+ elseif (q=48) and s in {'a','b','c','d','e'} then
+  return 84
+ 
+ elseif (q=48) and s in {'*','/','#','%'} then
+  return "Error"
+  
+elseif (q=49) and s in {'A','B','C','D','E'} then
+  return 85
+ 
+ elseif (q=49) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=49) and s in {'*','/','#','%'} then
+  return 86
+  
+ elseif (q=50) and s in {'A','B','C','D','E'} then
+  return 87
+ 
+ elseif (q=50) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=50) and s in {'*','/','#','%'} then
+  return 88
+ 
+ elseif (q=51) and s in {'A','B','C','D','E'} then
+  return 89
+ 
+ elseif (q=51) and s in {'a','b','c','d','e'} then
+  return 90
+ 
+ elseif (q=51) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=52) and s in {'A','B','C','D','E'} then
+  return 91
+ 
+ elseif (q=52) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=52) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=53) and s in {'A','B','C','D','E'} then
+  return 92
+ 
+ elseif (q=53) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=53) and s in {'*','/','#','%'} then
+  return 93
+  
+ elseif (q=54) and s in {'A','B','C','D','E'} then
+  return 94
+ 
+ elseif (q=54) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=54) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=55) and s in {'A','B','C','D','E'} then
+  return 95
+ 
+ elseif (q=55) and s in {'a','b','c','d','e'} then
+  return 96
+ 
+ elseif (q=55) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=56) and s in {'A','B','C','D','E'} then
+  return 97
+ 
+ elseif (q=56) and s in {'a','b','c','d','e'} then
+  return 98
+ 
+ elseif (q=56) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=57) and s in {'A','B','C','D','E'} then
+  return 99
+ 
+ elseif (q=57) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=57) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=58) and s in {'A','B','C','D','E'} then
+  return 100
+ 
+ elseif (q=58) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=58) and s in {'*','/','#','%'} then
+  return "Error"
+  
+  elseif (q=59) and s in {'A','B','C','D','E'} then
+  return 101
+ 
+ elseif (q=59) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=59) and s in {'*','/','#','%'} then
+  return 102
+ 
+ elseif (q=60) and s in {'A','B','C','D','E'} then
+  return 103
+ 
+ elseif (q=60) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=60) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=61) and s in {'A','B','C','D','E'} then
+  return 104
+ 
+ elseif (q=61) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=61) and s in {'*','/','#','%'} then
+  return "Error"
+  
+  elseif (q=62) and s in {'A','B','C','D','E'} then
+  return 105
+ 
+ elseif (q=62) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=62) and s in {'*','/','#','%'} then
+  return "Error"
+  
+  
+ elseif (q=63) and s in {'A','B','C','D','E'} then
+  return 106
+ 
+ elseif (q=63) and s in {'a','b','c','d','e'} then
+  return 107
+ 
+ elseif (q=63) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=64) and s in {'A','B','C','D','E'} then
+  return 108
+ 
+ elseif (q=64) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=64) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=65) and s in {'A','B','C','D','E'} then
+  return 109
+ 
+ elseif (q=65) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=65) and s in {'*','/','#','%'} then
+  return "Error"  
+  
+ elseif (q=66) and s in {'A','B','C','D','E'} then
+  return 110
+ 
+ elseif (q=66) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=66) and s in {'*','/','#','%'} then
+  return "Error" 
+  
+ elseif (q=67) and s in {'A','B','C','D','E'} then
+  return 111
+ 
+ elseif (q=67) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=67) and s in {'*','/','#','%'} then
+  return 112
+  
+ elseif (q=68) and s in {'A','B','C','D','E'} then
+  return 113
+ 
+ elseif (q=68) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=68) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=69) and s in {'A','B','C','D','E'} then
+  return 114
+ 
+ elseif (q=69) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=69) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=70) and s in {'A','B','C','D','E'} then
+  return 115
+ 
+ elseif (q=70) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=70) and s in {'*','/','#','%'} then
+  return 116
+  
+ elseif (q=71) and s in {'A','B','C','D','E'} then
+  return 117
+ 
+ elseif (q=71) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=71) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=72) and s in {'A','B','C','D','E'} then
+  return 118
+ 
+ elseif (q=72) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=72) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=73) and s in {'A','B','C','D','E'} then
+  return 119
+ 
+ elseif (q=73) and s in {'a','b','c','d','e'} then
+  return 120
+ 
+ elseif (q=73) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=74) and s in {'A','B','C','D','E'} then
+  return 121
+ 
+ elseif (q=74) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=74) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=75) and s in {'A','B','C','D','E'} then
+  return 122
+ 
+ elseif (q=75) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=75) and s in {'*','/','#','%'} then
+  return "Error"
+ 
+ elseif (q=76) and s in {'A','B','C','D','E'} then
+  return 123
+ 
+ elseif (q=76) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=76) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ elseif (q=77) and s in {'A','B','C','D','E'} then
+  return 124
+ 
+ elseif (q=77) and s in {'a','b','c','d','e'} then
+  return "Error"
+ 
+ elseif (q=77) and s in {'*','/','#','%'} then
+  return "Error"
+  
+ else
+ return "Error"
+
+end
+end
